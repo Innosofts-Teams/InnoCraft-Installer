@@ -32,9 +32,12 @@ void MainWindow::on_pushButton_clicked()
    int key = key_.toInt();qDebug() << key_;
    string user = user_.toStdString();
    string a;
-   a = "aria2c.exe http://175.178.105.153:3205/" + user +"key.js";
-   const char* url = a.data();
-   system(url);
+   /*不公开调用部分，gpl v2：Activities other than copying, distribution and modification are not
+covered by this License; they are outside its scope. The act of
+running the Program is not restricted, and the output from the Program
+is covered only if its contents constitute a work based on the
+Program (independent of having been made by running the Program).
+Whether that is true depends on what the Program does.*/
    ifstream ifile;
    ifile.open(user + "key.js");
    int key_2;
@@ -45,7 +48,12 @@ void MainWindow::on_pushButton_clicked()
     system("del *.js");
     QMessageBox::information(NULL, "密钥正确！", "正在激活.......");
     QMessageBox::information(NULL, "提示" , "激活过程中会大约死机7.5秒");
-    system("aria2c.exe http://175.178.105.153:3205/package.zip");
+       /*不公开调用部分，gpl v2：Activities other than copying, distribution and modification are not
+covered by this License; they are outside its scope. The act of
+running the Program is not restricted, and the output from the Program
+is covered only if its contents constitute a work based on the
+Program (independent of having been made by running the Program).
+Whether that is true depends on what the Program does.*/
     system("7z.exe x package.zip");
     system("start install.exe");
     Sleep(7500);
